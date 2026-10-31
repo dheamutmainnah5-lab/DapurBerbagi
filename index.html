@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapur Berbagi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HALAMAN BERANDA -->
+<section id="beranda" class="halaman">
+    <nav>
+        <h2>DAPUR <span>BERBAGI.</span></h2>
+        <p>Berbagi Kebaikan</p>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-text">
+            <p class="label">BERBAGI MAKANAN, MENEBAR KEBAIKAN</p>
+            <h1>Berbagi makanan,<br>berbagi harapan.</h1>
+            <p>
+                Menghubungkan orang-orang yang ingin berbagi
+                makanan dengan mereka yang membutuhkan.
+            </p>
+            <button onclick="bukaPilihan()">Mulai Sekarang</button>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800"
+                 alt="Makanan sehat">
+        </div>
+    </div>
+
+    <footer>© 2026 Dapur Berbagi | Berbagi Kebaikan</footer>
+</section>
+
+<!-- PILIHAN AKUN -->
+<section id="pilihan" class="halaman" hidden>
+    <div class="konten">
+        <h1>Selamat Datang</h1>
+        <p>Pilih jenis akun untuk melanjutkan.</p>
+
+        <div class="pilihan">
+            <div class="kartu">
+                <h2>Donatur</h2>
+                <p>Bagikan makanan kepada orang yang membutuhkan.</p>
+                <button onclick="pilihAkun('Donatur')">Pilih Donatur</button>
+            </div>
+
+            <div class="kartu">
+                <h2>Penerima</h2>
+                <p>Temukan makanan yang tersedia untuk dibagikan.</p>
+                <button onclick="pilihAkun('Penerima')">Pilih Penerima</button>
+            </div>
+        </div>
+
+        <button class="btn-kembali" onclick="tampilkan('beranda')">
+            Kembali
+        </button>
+    </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="halaman" hidden>
+    <div class="login-box">
+        <h1>Masuk Akun</h1>
+        <p id="jenisAkun">Silakan masukkan identitas Anda.</p>
+
+        <input type="text" id="nama" placeholder="Nama lengkap">
+        <input type="email" id="email" placeholder="Alamat email">
+
+        <button onclick="login()">Masuk Sekarang</button>
+        <button class="btn-kembali" onclick="tampilkan('pilihan')">
+            Kembali
+        </button>
+    </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="halaman" hidden>
+    <nav>
+        <h2>DAPUR <span>BERBAGI.</span></h2>
+        <button onclick="keluar()">Keluar</button>
+    </nav>
+
+    <div class="dashboard">
+        <h1 id="salam">Selamat Datang!</h1>
+        <p id="infoAkun"></p>
+
+        <!-- FORM DONATUR -->
+        <div id="formDonatur" hidden>
+            <div class="form-box">
+                <h2>Bagikan Makanan</h2>
+                <p>Isi informasi makanan yang ingin dibagikan.</p>
+
+                <input type="text" id="makanan"
+                       placeholder="Nama makanan">
+
+                <input type="number" id="jumlah"
+                       placeholder="Jumlah porsi" min="1">
+
+                <input type="text" id="lokasi"
+                       placeholder="Lokasi pengambilan">
+
+                <button onclick="tambahMakanan()">Bagikan Makanan</button>
+            </div>
+        </div>
+
+        <!-- DAFTAR MAKANAN -->
+        <div class="daftar">
+            <h2>Makanan Tersedia</h2>
+            <div id="daftarMakanan" class="makanan"></div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
